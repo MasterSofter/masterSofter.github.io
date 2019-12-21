@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+	
+<canvas id="canvas" width="288" height="512" style=
+"border: 4px solid black;
+ margin-left:43.5%;
+ margin-top:8%;
+
+"></canvas>
+
+
+<script src="bird.js"></script>
+<script src="game.js"></script>
+<script src="menu.js"></script>
+<script src="data.js"></script>
+
+
+<script>
+function main(){
+for (var i = 0; i < 3; i++){
+		if (GameState(stateName[i]) != false){
+				console.log('Мы находимся в состоянии: ' + stateName[i]);
+				Start(stateName[i]); 
+		}
+	}
+	requestAnimationFrame(main);
+}
+function GameState(Name){
+	if(state[Name] == true){
+		return stateName;
+	}
+	else return 0;
+}		
+
+function Start(Name){
+	if(Name == "menu"){
+		Menu();
+	}else
+	if(Name == "game"){
+		Game();
+	}
+}
+
+main();
+
+</script>
+
+
+</body>
+
+
+
+</html>
